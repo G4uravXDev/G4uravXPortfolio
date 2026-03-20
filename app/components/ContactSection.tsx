@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import RevealOnScroll from "./RevealOnScroll";
+import Link from "next/link";
 
 export default function ContactSection() {
     return (
@@ -39,7 +40,7 @@ export default function ContactSection() {
 
                     <RevealOnScroll delay={2}>
                         <div className="contact-links">
-                            <a
+                            <Link
                                 href="/contact"
                                 className="contact-link contact-link-primary"
                             >
@@ -55,7 +56,7 @@ export default function ContactSection() {
                                     <polyline points="22,6 12,13 2,6" />
                                 </svg>
                                 Email me
-                            </a>
+                            </Link>
                             <a
                                 href="https://github.com/G4uravXDev"
                                 target="_blank"

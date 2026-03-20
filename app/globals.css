@@ -1764,3 +1764,21 @@ img {
   color: var(--accent);
   margin-top: 16px;
 }
+
+/* ─── CONTACT PAGE ANIMATION ────────────── */
+@keyframes contactPageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.contact-page {
+  animation: contactPageEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
