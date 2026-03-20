@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactPage() {
     const [status, setStatus] = useState("");
@@ -65,77 +66,101 @@ export default function ContactPage() {
                     Back to Portfolio
                 </Link>
 
-                <div className="form-card">
-                    {isSuccess ? (
-                        <div style={{ textAlign: "center", padding: "40px 0" }}>
-                            <div style={{ 
-                                width: "64px", height: "64px", background: "rgba(200, 255, 0, 0.1)", 
-                                borderRadius: "50%", display: "flex", alignItems: "center", 
-                                justifyContent: "center", margin: "0 auto 24px", color: "var(--accent)" 
-                            }}>
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg>
-                            </div>
-                            <h1 className="form-title" style={{ marginBottom: "16px" }}>Message Sent!</h1>
-                            <p className="form-subtitle" style={{ marginBottom: "32px", fontSize: "15px" }}>
-                                Thank you for reaching out. I have received your message and will get back to you as soon as possible.
-                            </p>
-                            <button onClick={() => { setIsSuccess(false); setStatus(""); }} className="form-submit-btn" style={{ width: "100%" }}>
-                                Send Another Message
-                            </button>
-                        </div>
-                    ) : (
-                        <>
-                            <h1 className="form-title">Get in Touch</h1>
-                            <p className="form-subtitle">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
-                            
-                            <form onSubmit={handleSubmit} className="contact-form">
-                                <div className="form-group">
-                                    <label htmlFor="name" className="form-label">Name</label>
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        name="name" 
-                                        className="form-input" 
-                                        placeholder="Your name" 
-                                        required 
-                                    />
+                <div className="form-card" style={{ position: "relative", minHeight: "500px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                    <AnimatePresence mode="wait">
+                        {isSuccess ? (
+                            <motion.div 
+                                key="success"
+                                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                style={{ textAlign: "center", padding: "40px 0", width: "100%" }}
+                            >
+                                <div style={{ 
+                                    width: "64px", height: "64px", background: "rgba(200, 255, 0, 0.1)", 
+                                    borderRadius: "50%", display: "flex", alignItems: "center", 
+                                    justifyContent: "center", margin: "0 auto 24px", color: "var(--accent)" 
+                                }}>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="email" className="form-label">Email</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        name="email" 
-                                        className="form-input" 
-                                        placeholder="your.email@example.com" 
-                                        required 
-                                    />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="message" className="form-label">Message</label>
-                                    <textarea 
-                                        id="message" 
-                                        name="message" 
-                                        className="form-input form-textarea" 
-                                        placeholder="Your message..." 
-                                        rows={5}
-                                        required 
-                                    ></textarea>
-                                </div>
-
-                                <button type="submit" className="form-submit-btn" disabled={isSubmitting}>
-                                    {isSubmitting ? "Sending..." : "Send Message"}
+                                <h1 className="form-title" style={{ marginBottom: "16px" }}>Message Sent!</h1>
+                                <p className="form-subtitle" style={{ marginBottom: "32px", fontSize: "15px" }}>
+                                    Thank you for reaching out. I have received your message and will get back to you as soon as possible.
+                                </p>
+                                <button onClick={() => { setIsSuccess(false); setStatus(""); }} className="form-submit-btn" style={{ width: "100%" }}>
+                                    Send Another Message
                                 </button>
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="form"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                style={{ width: "100%" }}
+                            >
+                                <h1 className="form-title">Get in Touch</h1>
+                                <p className="form-subtitle">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
                                 
-                                {status && <div className="form-status" style={{color: status.includes("successfully") ? "var(--accent)" : "#ff4444"}}>{status}</div>}
-                            </form>
-                        </>
-                    )}
+                                <form onSubmit={handleSubmit} className="contact-form">
+                                    <div className="form-group">
+                                        <label htmlFor="name" className="form-label">Name</label>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            name="name" 
+                                            className="form-input" 
+                                            placeholder="Your name" 
+                                            required 
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="email" className="form-label">Email</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            name="email" 
+                                            className="form-input" 
+                                            placeholder="your.email@example.com" 
+                                            required 
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="message" className="form-label">Message</label>
+                                        <textarea 
+                                            id="message" 
+                                            name="message" 
+                                            className="form-input form-textarea" 
+                                            placeholder="Your message..." 
+                                            rows={5}
+                                            required 
+                                        ></textarea>
+                                    </div>
+
+                                    <button type="submit" className="form-submit-btn" disabled={isSubmitting}>
+                                        {isSubmitting ? "Sending..." : "Send Message"}
+                                    </button>
+                                    
+                                    {status && (
+                                        <motion.div 
+                                            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                                            className="form-status" 
+                                            style={{ color: status.toLowerCase().includes("fail") || status.toLowerCase().includes("error") || status.includes("misconfiguration") ? "#ff4444" : "var(--accent)" }}
+                                        >
+                                            {status}
+                                        </motion.div>
+                                    )}
+                                </form>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </main>
