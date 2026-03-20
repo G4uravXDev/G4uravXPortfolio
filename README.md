@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gaurav Nayyar | Developer Portfolio
 
-## Getting Started
+A sleek, premium, and minimal developer portfolio built with **Next.js** and **React**. Designed to showcase projects, skills, education, and awards with a focus on typography, smooth animations, and a rich dark-themed UI.
 
-First, run the development server:
+![Portfolio Preview](./public/window.svg) <!-- You can update this later with an actual screenshot -->
+
+## 🚀 Key Features
+
+- **Premium Dark UI**: A carefully crafted dark mode design with neon accents and clean, readable typography.
+- **Smooth Animations**: Integrated `RevealOnScroll` animations and subtle hover transitions without bloat.
+- **Dynamic Projects Showcase**: Instagram-style square cards with perfectly aligned image previews.
+- **Interactive Contact Form**: Fully functional and secure contact page powered by **Web3Forms**—no backend SMTP required.
+- **Secure File Serving**: Dedicated Next.js API routes used to securely serve resume downloads without exposing the asset directories.
+- **Responsive Layouts**: Designed to look and function perfectly from ultra-wide 4K monitors down to mobile devices.
+
+## 🛠 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Library**: React 18
+- **Styling**: Modern Vanilla CSS (with CSS Variables & Grid/Flexbox)
+- **Forms**: [Web3Forms](https://web3forms.com/) API
+
+## 📂 Project Structure
+
+- `/app/components/` - Contains all reusable UI sections (`HeroSection`, `ProjectsSection`, `TechnicalArsenal`, `ExperienceSection`, `NavBar`, etc.)
+- `/app/api/` - Next.js API Routes (handles secure resume downloads and web form APIs).
+- `/app/contact/` - Dedicated standalone contact page layout.
+- `/app/Assests/` - Images, certificates, and private static assets (like PDF resumes).
+- `/app/globals.css` - The core design system and animation utility classes.
+
+## ⚙️ Getting Started
+
+First, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/G4uravXDev/G4uravXPortfolio.git
+cd G4uravXPortfolio
+npm install
+```
+
+### Environment Setup
+If you want the Contact Page to work, you will need a Web3Forms Access Key.
+1. Create a `.env.local` file in the root directory.
+2. Visit [Web3Forms](https://web3forms.com/), enter your email, and receive your free key.
+3. Add the key to your environment variables:
+```env
+WEB3FORMS_ACCESS_KEY="your-access-key-here"
+```
+
+### Running Locally
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open-source and available under the MIT License. Feel free to fork it, learn from it, and make it your own!
