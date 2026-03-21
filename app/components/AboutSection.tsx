@@ -65,7 +65,7 @@ export default function AboutSection() {
                                         <h3>Full-stack capable</h3>
                                         <p>
                                             While my passion is the backend, I build complete products —
-                                            from React/Next.js frontends to PostgreSQL databases.
+                                            from React.js frontends to PostgreSQL databases.
                                         </p>
                                     </div>
                                 </RevealOnScroll>
@@ -74,7 +74,7 @@ export default function AboutSection() {
                                     <div className="about-highlight-item">
                                         <h3>Problem solver at heart</h3>
                                         <p>
-                                            Competitive programming enthusiast with 100+ LeetCode
+                                            Competitive programming enthusiast with 120+ LeetCode
                                             solutions. I love breaking down complex problems into
                                             elegant solutions.
                                         </p>

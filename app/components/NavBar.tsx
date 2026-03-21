@@ -55,14 +55,9 @@ export default function NavBar() {
     }, [isMenuOpen]);
 
     const stateClass = inHero ? "nav--hero" : "nav--scrolled";
-    const motionClass = !inHero
-        ? scrollingDown
-            ? "nav--slide-hidden"
-            : "nav--slide-visible"
-        : "";
 
     return (
-        <header className={`nav ${stateClass} ${motionClass}`}>
+        <header className={`nav ${stateClass}`}>
             <div className="nav-inner">
                 <div className="nav-side nav-side-left">
                     <nav className="nav-links" aria-label="Primary navigation">

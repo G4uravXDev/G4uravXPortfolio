@@ -28,7 +28,7 @@ const skills: Skill[] = [
     { name: "NodeJS", category: "Frameworks", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
     { name: "ExpressJS", category: "Frameworks", icon: "https://cdn.simpleicons.org/express/eeeeee" },
     { name: "Tailwind CSS", category: "Frameworks", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-    { name: "Laravel", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+    // { name: "Laravel", category: "Frameworks", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
     { name: "Rest API", category: "Frameworks", icon: typeof restApiIcon === "string" ? restApiIcon : restApiIcon.src },
     { name: "SpringBoot", category: "Frameworks", icon: "https://cdn.simpleicons.org/springboot/6DB33F" },
 
@@ -38,21 +38,21 @@ const skills: Skill[] = [
 
     // Tools / Platforms
     { name: "Git", category: "Tools", icon: "https://cdn.simpleicons.org/git/F05032" },
-    { name: "AWS", category: "Tools", icon: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
-    { name: "Docker", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-    { name: "Linux", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
-    { name: "Vercel", category: "Tools", icon: "https://cdn.simpleicons.org/vercel/white" },
+    // { name: "AWS", category: "Tools", icon: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
+    // { name: "Docker", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+    // { name: "Linux", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+    // { name: "Vercel", category: "Tools", icon: "https://cdn.simpleicons.org/vercel/white" },
     { name: "ViteJS", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" },
-    { name: "Eclipse IDE", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" },
+    // { name: "Eclipse IDE", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" },
     { name: "Postman", category: "Tools", icon: "https://cdn.simpleicons.org/postman/FF6C37" },
     { name: "Firebase", category: "Tools", icon: "https://cdn.simpleicons.org/firebase/DD2C00" },
     { name: "Supabase", category: "Tools", icon: "https://cdn.simpleicons.org/supabase/3ECF8E" },
     { name: "Figma", category: "Tools", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
     { name: "Unity", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" },
-    { name: "Arduino", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" },
-    { name: "Composer", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/composer/composer-original.svg" },
+    // { name: "Arduino", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" },
+    // { name: "Composer", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/composer/composer-original.svg" },
     { name: "Power Automate", category: "Tools", icon: typeof powerAutomateIcon === "string" ? powerAutomateIcon : powerAutomateIcon.src },
-    { name: "N8N", category: "Tools", icon: "https://cdn.simpleicons.org/n8n/EA4B71" },
+    // { name: "N8N", category: "Tools", icon: "https://cdn.simpleicons.org/n8n/EA4B71" },
 ];
 
 const categories: Category[] = [
@@ -82,7 +82,7 @@ export default function TechnicalArsenal() {
                 </RevealOnScroll>
                 <RevealOnScroll delay={0.15}>
                     <h1 className="section-title">
-                        Technical <em>Arsenal.</em>
+                        Technical <em>Skills</em>
                     </h1>
                 </RevealOnScroll>
 

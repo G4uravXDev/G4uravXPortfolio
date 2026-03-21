@@ -51,13 +51,10 @@ export default function SmoothScroll() {
 
             e.preventDefault();
 
-            const rect = el.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            // Instead of centering the whole section (often too tall),
-            // frame the section heading nicely like your reference:
-            // scroll a bit past the section start so the heading sits near
-            // the top and the first content row is visible.
-            const offset = Math.round(viewportHeight * 0.15);
+            // Negative offset prevents the viewport from scrolling entirely onto the element 
+            // boundary, manually accounting for the 80px-100px sticky overlapping navbar 
+            // and leaving a 40px aesthetic cushion above the section text!
+            const offset = -120;
 
             // Use element-based scrollTo (works better with Lenis).
             lenis.scrollTo(el, { offset, duration: 1.2 });

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import RevealOnScroll from "./RevealOnScroll";
 
@@ -86,26 +87,97 @@ const certifications = [
         org: "Certificate",
         year: "October 2025",
         image: cloudCert,
+        issuedBy: "NPTEL / Great Learning",
+        monthYear: "October 2025",
+        skills: ["Cloud Architecture", "Deployment Strategies", "Infrastructure as Code"],
+        link: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS107S145870078310493199"
     },
     {
         title: "Web Development in React.js",
         org: "Certificate",
         year: "December 2025",
         image: reactCert,
+        issuedBy: "Coursera",
+        monthYear: "December 2025",
+        skills: ["React.js", "Component Design", "State Management", "Hooks"],
+        link: "https://www.coursera.org/account/accomplishments/verify/HKV9D6R76NJU"
     },
     {
         title: "Concepts in SQL",
         org: "Certificate",
         year: "November 2025",
         image: sqlCert,
+        issuedBy: "HackerRank",
+        monthYear: "November 2025",
+        skills: ["Database Management", "SQL Join Types", "Query Optimization", "Data Modeling"],
+        link: "https://www.coursera.org/account/accomplishments/verify/TC5SWNYI5W5D"
     },
     {
         title: "Foundations of UX Design",
         org: "Certificate",
         year: "November 2025",
         image: uxCert,
+        issuedBy: "Google",
+        monthYear: "November 2025",
+        skills: ["UX Research", "Wireframing", "Figma", "User-Centered Design"],
+        link: "https://www.coursera.org/account/accomplishments/verify/4ZZ15Q8CLXNL"
     },
 ];
+
+const CertificateCard = ({ cert, index }: any) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+    return (
+        <RevealOnScroll delay={index * 0.12}>
+            <div 
+                className={`cert-card ${isFlipped ? 'is-flipped' : ''}`}
+                onClick={() => setIsFlipped(!isFlipped)}
+            >
+                <div className="cert-card-inner">
+                    <div className="cert-card-front">
+                        <div className="cert-card-img">
+                            <Image
+                                src={cert.image}
+                                alt={cert.title}
+                                fill
+                                style={{ objectFit: "cover" }}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                        </div>
+                        <div className="cert-card-content">
+                            <div className="cert-card-header">
+                                <h3 className="cert-card-title">{cert.title}</h3>
+                                <span className="cert-card-year">{cert.year}</span>
+                            </div>
+                            <p className="cert-card-org">{cert.org}</p>
+                        </div>
+                    </div>
+                    <div className="cert-card-back">
+                        <h3 className="cert-card-back-title">{cert.title}</h3>
+                        <p className="cert-card-back-issued">Issued by: {cert.issuedBy}</p>
+                        <p className="cert-card-back-date">{cert.monthYear}</p>
+                        <div className="cert-card-back-skills">
+                            {cert.skills.map((skill: string, idx: number) => (
+                                <span key={idx}>{skill}</span>
+                            ))}
+                        </div>
+                        <a 
+                            href={cert.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="cert-card-btn"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                // Optional: logic to open link if valid
+                            }}
+                        >
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </RevealOnScroll>
+    );
+};
 
 export default function ExperienceSection() {
     return (
@@ -124,26 +196,7 @@ export default function ExperienceSection() {
 
                     <div className="certs-grid">
                         {certifications.map((cert, i) => (
-                            <RevealOnScroll key={i} delay={i * 0.12}>
-                                <div className="cert-card">
-                                    <div className="cert-card-img">
-                                        <Image
-                                            src={cert.image}
-                                            alt={cert.title}
-                                            fill
-                                            style={{ objectFit: "cover" }}
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        />
-                                    </div>
-                                    <div className="cert-card-content">
-                                        <div className="cert-card-header">
-                                            <h3 className="cert-card-title">{cert.title}</h3>
-                                            <span className="cert-card-year">{cert.year}</span>
-                                        </div>
-                                        <p className="cert-card-org">{cert.org}</p>
-                                    </div>
-                                </div>
-                            </RevealOnScroll>
+                            <CertificateCard key={i} cert={cert} index={i} />
                         ))}
                     </div>
                 </div>
