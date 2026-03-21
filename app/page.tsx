@@ -9,6 +9,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import ContactSection from "./components/ContactSection";
 import LoadingScreen from "./components/LoadingScreen";
 import NavBar from "./components/NavBar";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             <ParticleBackground />
             <CustomCursor />
             <NavBar />
+            <WhatsAppButton />
 
             {/* Hero */}
             <HeroSection />
