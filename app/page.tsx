@@ -2,6 +2,7 @@ import HeroSection from "./components/HeroSection";
 import SmoothScroll from "./components/SmoothScroll";
 import ParticleBackground from "./components/ParticleBackground";
 import CustomCursor from "./components/CustomCursor";
+import CareerSection from "./components/CareerSection";
 import ProjectsSection from "./components/ProjectsSection";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
@@ -21,13 +22,14 @@ export default function Home() {
             {/* Hero */}
             <HeroSection />
 
-            {/* Projects */}
-            <ProjectsSection />
-
-            {/* About — Writing + Fragments + Personal */}
+            {/* About — Fragments + Technical Arsenal + Personal */}
             <AboutSection />
 
-            {/* <hr className="section-divider" /> */}
+            {/* Experience */}
+            <CareerSection />
+
+            {/* Projects */}
+            <ProjectsSection />
 
             {/* Experience + Education + Tools + Awards */}
             <ExperienceSection />

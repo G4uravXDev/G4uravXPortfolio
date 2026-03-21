@@ -15,8 +15,8 @@ const projects = [
             "Simplifying the chaos of event management. EventOne gives student clubs and communities a single, beautiful space to plan, promote, and host events without the headache.",
         image: eventoneImg,
         tech: ["React.js", "PostgreSQL", "Express", "Tailwind"],
-        live: "https://eventone.com",
-        source: "https://github.com/gaurav/eventone",
+        live: "https://event0ne.xyz",
+        source: "https://github.com/G4uravXDev/Event-management-system-main",
     },
     {
         tag: "Cyber Security",
@@ -25,8 +25,8 @@ const projects = [
             "A platform to raise awareness about cybercrime and promote safe online practices. Also enables users to report cyber incidents in a simple and accessible way.",
         image: cybersecurityImg,
         tech: ["React", "Node.js", "MongoDB", "Express"],
-        live: "https://cybersecurity-portal.com",
-        source: "https://github.com/gaurav/cybersecurity-portal",
+        live: "https://cybersecurity-awareness-portal-8sx2.onrender.com/",
+        source: "https://github.com/G4uravXDev/Cybersecurity-Awareness-Portal",
     },
     {
         tag: "Automation",
@@ -36,7 +36,7 @@ const projects = [
         image: lpuautoImg,
         tech: ["Python", "Automation", "Scripting"],
         live: "",
-        source: "https://github.com/gaurav/lpu-auto",
+        source: "https://github.com/G4uravXDev/LPU_Wireless_Login_Automation",
     },
     {
         tag: "Game Development",
@@ -46,7 +46,7 @@ const projects = [
         image: dungeonImg,
         tech: ["Unity", "C#", "Procedural Gen"],
         live: "",
-        source: "https://github.com/gaurav/crypt-of-carnage",
+        source: "https://github.com/G4uravXDev/Crypt_of_Carnage",
     },
 ];
 

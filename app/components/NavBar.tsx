@@ -56,10 +56,10 @@ export default function NavBar() {
             <div className="nav-inner">
                 <div className="nav-side nav-side-left">
                     <nav className="nav-links" aria-label="Primary navigation">
-                        <a href="#projects">Projects</a>
                         <a href="#about">About</a>
+                        <a href="#technical-arsenal">Skills</a>
                         <a href="#experience">Experience</a>
-                        <a href="#education">Education</a>
+                        <a href="#projects">Projects</a>
 
                     </nav>
                 </div>
@@ -73,8 +73,9 @@ export default function NavBar() {
                 <div className="nav-side nav-side-right">
                     <div><nav className="nav-links" aria-label="Primary navigation">
                         <a href="#certifications">Certifications</a>
-                        <a href="#technical-arsenal">Skills</a>
                         <a href="#awards">Awards</a>
+                        <a href="#education">Education</a>
+
                     </nav>
                     </div>
                     <a href="#contact" className="nav-cta">

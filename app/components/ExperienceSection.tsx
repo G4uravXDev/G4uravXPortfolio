@@ -8,28 +8,7 @@ import uxCert from "../Assests/certificates/FoundationsofUserExperience(UX)Desig
 import reactCert from "../Assests/certificates/WebDevelopmentinReact.jsDevelopmentBasics.png";
 import cloudCert from "../Assests/certificates/cloudcomputing.png";
 
-const experience = [
-    {
-        period: "2025 — Present",
-        role: "Backend Developer",
-        company: "Freelance / Projects",
-        details: [
-            "Full-stack web application development",
-            "Database architecture & migrations",
-            "REST API design & implementation",
-        ],
-    },
-    // {
-    //     period: "2023 — 2024",
-    //     role: "Software Engineering Student",
-    //     company: "Self-directed Learning",
-    //     details: [
-    //         "Data structures & algorithms mastery",
-    //         "System design fundamentals",
-    //         "Open source contributions",
-    //     ],
-    // },
-];
+
 
 const education = [
     {
@@ -131,76 +110,11 @@ const certifications = [
 export default function ExperienceSection() {
     return (
         <>
-            {/* Experience */}
-            <section className="experience-section" id="experience">
-                <div className="section-container">
-                    <RevealOnScroll>
-                        <p className="section-label">Career</p>
-                    </RevealOnScroll>
-                    <RevealOnScroll delay={1}>
-                        <h1 className="section-title">Experience.</h1>
-                    </RevealOnScroll>
-
-                    <div className="experience-items">
-                        {experience.map((exp, i) => (
-                            <RevealOnScroll key={i} delay={i}>
-                                <div className="experience-item">
-                                    <div className="experience-period">{exp.period}</div>
-                                    <div className="experience-info">
-                                        <h3>{exp.role}</h3>
-                                        <p>{exp.company}</p>
-                                    </div>
-                                    <div className="experience-details">
-                                        <ul>
-                                            {exp.details.map((d, j) => (
-                                                <li key={j}>{d}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </RevealOnScroll>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* <hr className="section-divider" /> */}
-
-            {/* Education */}
-            <section className="section" id="education">
-                <div className="section-container">
-                    <RevealOnScroll>
-                        <p className="section-label">Learning</p>
-                    </RevealOnScroll>
-                    <RevealOnScroll delay={1}>
-                        <h1 className="section-title">Education.</h1>
-                    </RevealOnScroll>
-
-                    <div className="edu-list">
-                        {education.map((edu, i) => (
-                            <RevealOnScroll key={i} delay={i * 0.1}>
-                                <div className="edu-row">
-                                    <div className="edu-row-left">
-                                        <h3 className="edu-school">{edu.school}</h3>
-                                        <div className="edu-degree">{edu.degree}</div>
-                                        <div className="edu-major">{edu.major}</div>
-                                    </div>
-                                    <div className="edu-row-right">
-                                        <div className="edu-location">{edu.location}</div>
-                                        <div className="edu-duration">{edu.duration}</div>
-                                    </div>
-                                </div>
-                            </RevealOnScroll>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Certifications */}
             <section className="certs-section" id="certifications">
                 <div className="section-container">
                     <RevealOnScroll>
-                        <p className="section-label">Credentials</p>
+                        <p className="section-label">Certifications</p>
                     </RevealOnScroll>
                     <RevealOnScroll delay={0.15}>
                         <h1 className="section-title">
@@ -262,6 +176,40 @@ export default function ExperienceSection() {
                     </div>
                 </div>
             </section>
+            {/* Education */}
+            <section className="section" id="education">
+                <div className="section-container">
+                    <RevealOnScroll>
+                        <p className="section-label">Learning</p>
+                    </RevealOnScroll>
+                    <RevealOnScroll delay={1}>
+                        <h1 className="section-title">Education.</h1>
+                    </RevealOnScroll>
+
+                    <div className="edu-list">
+                        {education.map((edu, i) => (
+                            <RevealOnScroll key={i} delay={i * 0.1}>
+                                <div className="edu-row">
+                                    <div className="edu-row-left">
+                                        <h3 className="edu-school">{edu.school}</h3>
+                                        <div className="edu-degree">{edu.degree}</div>
+                                        <div className="edu-major">{edu.major}</div>
+                                    </div>
+                                    <div className="edu-row-right">
+                                        <div className="edu-location">{edu.location}</div>
+                                        <div className="edu-duration">{edu.duration}</div>
+                                    </div>
+                                </div>
+                            </RevealOnScroll>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
+
+            {/* <hr className="section-divider" /> */}
+
         </>
     );
 }

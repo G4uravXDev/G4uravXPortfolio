@@ -15,9 +15,6 @@ const milestones = [
 export default function AboutSection() {
     return (
         <>
-            {/* Technical Arsenal Section */}
-            <TechnicalArsenal />
-
             {/* Fragments / Milestones Marquee */}
             <section className="marquee-section" id="milestones">
                 <div className="section-container">
@@ -114,6 +111,9 @@ export default function AboutSection() {
                     </div>
                 </div>
             </section>
+            {/* Technical Arsenal Section */}
+            <TechnicalArsenal />
+
         </>
     );
 }
