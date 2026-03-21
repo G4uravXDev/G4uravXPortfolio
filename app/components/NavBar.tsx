@@ -5,30 +5,8 @@ import { useEffect, useRef, useState } from "react";
 export default function NavBar() {
     const [inHero, setInHero] = useState(true);
     const [scrollingDown, setScrollingDown] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const lastYRef = useRef(0);
-
-    useEffect(() => {
-        const hero = document.getElementById("hero");
-        if (!hero) {
-            setInHero(false);
-            return;
-        }
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                // While hero is visible: keep nav blended/transparent.
-                // Once user scrolls past hero: make nav opaque.
-                setInHero(entry.isIntersecting);
-            },
-            {
-                root: null,
-                threshold: 0.15,
-            }
-        );
-
-        observer.observe(hero);
-        return () => observer.disconnect();
-    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,11 +16,43 @@ export default function NavBar() {
 
             setScrollingDown(currentY > lastY);
             lastYRef.current = currentY;
+
+            const hero = document.getElementById("hero");
+            if (hero) {
+                // Switch to "scrolled" state once hero is mostly out of view.
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                setInHero(heroBottom > 120);
+            } else {
+                setInHero(false);
+            }
         };
 
+        handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
+        };
     }, []);
+
+    useEffect(() => {
+        const closeMenu = () => setIsMenuOpen(false);
+        window.addEventListener("resize", closeMenu);
+        return () => window.removeEventListener("resize", closeMenu);
+    }, []);
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMenuOpen]);
 
     const stateClass = inHero ? "nav--hero" : "nav--scrolled";
     const motionClass = !inHero
@@ -89,7 +99,40 @@ export default function NavBar() {
                         Contact
                     </a>
                 </div>
+
+                <button
+                    type="button"
+                    className={`nav-hamburger ${isMenuOpen ? "is-open" : ""}`}
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isMenuOpen}
+                    onClick={() => setIsMenuOpen((prev) => !prev)}
+                >
+                    <span />
+                    <span />
+                </button>
             </div>
+
+            <div className={`nav-mobile-menu ${isMenuOpen ? "is-open" : ""}`}>
+                <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+                <a href="#technical-arsenal" onClick={() => setIsMenuOpen(false)}>Skills</a>
+                <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+                <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
+                <a href="#certifications" onClick={() => setIsMenuOpen(false)}>Certifications</a>
+                <a href="#awards" onClick={() => setIsMenuOpen(false)}>Awards</a>
+                <a href="#education" onClick={() => setIsMenuOpen(false)}>Education</a>
+                <a href="/GauravNayyarResumeV1.pdf" download onClick={() => setIsMenuOpen(false)}>
+                    Resume
+                </a>
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            </div>
+
+            <button
+                type="button"
+                className={`nav-mobile-backdrop ${isMenuOpen ? "is-open" : ""}`}
+                aria-hidden={!isMenuOpen}
+                tabIndex={-1}
+                onClick={() => setIsMenuOpen(false)}
+            />
         </header>
     );
 }

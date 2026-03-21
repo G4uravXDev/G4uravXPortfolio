@@ -88,6 +88,12 @@ const certifications = [
         image: cloudCert,
     },
     {
+        title: "Web Development in React.js",
+        org: "Certificate",
+        year: "December 2025",
+        image: reactCert,
+    },
+    {
         title: "Concepts in SQL",
         org: "Certificate",
         year: "November 2025",
@@ -98,12 +104,6 @@ const certifications = [
         org: "Certificate",
         year: "November 2025",
         image: uxCert,
-    },
-    {
-        title: "Web Development in React.js",
-        org: "Certificate",
-        year: "December 2025",
-        image: reactCert,
     },
 ];
 
