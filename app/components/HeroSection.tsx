@@ -31,7 +31,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.8 }}
                     >
-                        Hi, I&apos;m Gaurav — a Software Engineer with a passion for building
+                        Hi, I&apos;m Gaurav, a Software Engineer with a passion for building
                         scalable systems, robust APIs, and modern web applications.
                     </motion.p>
                 </div>
