@@ -28,13 +28,13 @@ export default function Home() {
             <AboutSection />
 
             {/* Experience */}
-            <CareerSection />
+            {/* <CareerSection /> */}
 
             {/* Projects */}
             <ProjectsSection />
 
             {/* Experience + Education + Tools + Awards */}
-            <ExperienceSection />
+            {/* <ExperienceSection /> */}
 
             {/* Contact + Footer */}
             <ContactSection />
