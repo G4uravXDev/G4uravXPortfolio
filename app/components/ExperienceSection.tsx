@@ -64,9 +64,14 @@ const tools = [
 
 const awards = [
     {
-        title: "Core Member — AWS Cloud Community",
+        title: "Management Lead — AWS Cloud Community",
         org: "Delivering and managing 10+ technical sessions on AWS, cloud fundamentals, and modern web development.",
-        year: "Jan 2024",
+        year: "Aug 2025",
+    },
+    {
+        title: "Core Member — Encrpty Edge",
+        org: "Driving visual strategy and leading graphic design initiatives at Encrpty Edge, ensuring high-quality branding and engaging user experiences.",
+        year: "Oct 2025",
     },
     {
         title: "AI/ML Track Winner — InnovateX Hackathon",
@@ -128,7 +133,7 @@ const CertificateCard = ({ cert, index }: any) => {
     const [isFlipped, setIsFlipped] = useState(false);
     return (
         <RevealOnScroll delay={index * 0.12}>
-            <div 
+            <div
                 className={`cert-card ${isFlipped ? 'is-flipped' : ''}`}
                 onClick={() => setIsFlipped(!isFlipped)}
             >
@@ -160,10 +165,10 @@ const CertificateCard = ({ cert, index }: any) => {
                                 <span key={idx}>{skill}</span>
                             ))}
                         </div>
-                        <a 
-                            href={cert.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="cert-card-btn"
                             onClick={(e) => {
                                 e.stopPropagation();
