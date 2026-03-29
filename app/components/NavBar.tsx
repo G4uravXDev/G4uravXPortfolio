@@ -63,7 +63,7 @@ export default function NavBar() {
                     <nav className="nav-links" aria-label="Primary navigation">
                         <a href="#about">About</a>
                         <a href="#technical-arsenal">Skills</a>
-                        <a href="#experience">Experience</a>
+                        {/* <a href="#experience">Experience</a> */}
                         <a href="#projects">Projects</a>
                         <a href="#certifications">Certifications</a>
                     </nav>
