@@ -34,7 +34,7 @@ export default function Home() {
             <ProjectsSection />
 
             {/* Experience + Education + Tools + Awards */}
-            {/* <ExperienceSection /> */}
+            <ExperienceSection />
 
             {/* Contact + Footer */}
             <ContactSection />
