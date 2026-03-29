@@ -43,7 +43,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.9, delay: 1.6 }}
                 >
                     <div className="about-image-container">
-                        <img src="/mee.jpg" alt="Gaurav portrait" />
+                        <img src="/GauravNayyar.jpg" alt="Gaurav portrait" />
                     </div>
                 </motion.div>
             </div>

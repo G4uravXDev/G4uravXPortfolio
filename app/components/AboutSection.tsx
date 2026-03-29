@@ -44,7 +44,7 @@ export default function AboutSection() {
                     <div className="about-grid">
                         <RevealOnScroll>
                             <div className="about-image-container">
-                                <img src="/mee.jpg" alt="Gaurav portrait" />
+                                <img src="/GauravNayyar.jpg" alt="Gaurav portrait" />
                             </div>
                         </RevealOnScroll>
 
